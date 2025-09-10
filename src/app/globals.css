@@ -24,3 +24,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.glassy-navbar {
+  background: linear-gradient(
+    161.892deg,
+    rgba(255, 255, 255, 0.771) 0%,
+    rgba(255, 255, 255, 0.96) 100%
+  );
+  border-radius: 100px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px -5px,
+    rgba(0, 0, 0, 0.25) 0px 29px 25.8px -20px;
+  border-style: solid;
+  border-color: rgba(0, 0, 54, 0.12);
+  border-width: 0.7px;
+}   
