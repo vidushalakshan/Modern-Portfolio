@@ -1,25 +1,73 @@
+"use client";
+
 import Image from "next/image";
 import { LuArrowDownRight } from "react-icons/lu";
+import { MdArrowOutward } from "react-icons/md";
+import { motion } from "framer-motion";
 import Images from "../../../constants/images";
+import { Button } from "@/components/common/Button";
 
-const page = () => {
+const Page = () => {
   return (
-    <section className="text-black relative h-screen bg-[#e8e8e3]">
+    <section className="relative min-h-screen bg-[#e8e8e3] flex items-center justify-center overflow-hidden px-6 sm:px-12">
+      {/* Background Image */}
       <Image
         src={Images.homeImg}
-        className="absolute right-0 bottom-0 object-cover rounded-t-full w-[350]"
+        alt="Background"
+        priority
+        className="absolute right-0 bottom-0 object-cover rounded-t-full w-[250px] sm:w-[350px] md:w-[450px] lg:w-[550px]"
       />
-      <div className="flex flex-col absolute top-1/6 left-10">
-        <h1 className="text-[150px] font-bold">VIDUSHA LAKSHAN</h1>
-        <LuArrowDownRight size={50} className="relative" color="#b6b6b0"/>
-        <span className="text-[25px] mt-5 w-[600px]">
-          Open to job opportunities world wide.Passionate about building
-          polished,intuitive,and thoughtful digital experiences that leave
-          amark.
-        </span>
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col">
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[150px] font-bold leading-tight text-black"
+        >
+          VIDUSHA <br className="sm:hidden" /> LAKSHAN
+        </motion.h1>
+
+        {/* Arrow */}
+        <motion.div
+          initial={{ opacity: 0, rotate: -45 }}
+          animate={{ opacity: 1, rotate: 0 }}
+          transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+        >
+          <LuArrowDownRight size={50} className="text-[#b6b6b0] mb-5" />
+        </motion.div>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 1 }}
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-lg sm:max-w-1/3"
+        >
+          Open to job opportunities worldwide. Passionate about building
+          polished, intuitive, and thoughtful digital experiences that leave a
+          mark.
+        </motion.p>
+
+        {/* Button */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.2, duration: 0.7 }}
+          className="mt-6"
+        >
+          <a href="mailto:yourmail@example.com" target="_blank" rel="noopener noreferrer">
+            <Button variant="bgBlack" size="large" className="flex items-center gap-2">
+              <span>Contact</span>
+              <MdArrowOutward />
+            </Button>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default page;
+export default Page;
