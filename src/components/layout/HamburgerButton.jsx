@@ -15,7 +15,7 @@ const Path = (props) => (
   />
 );
 
-const HamburgerButton = ({ toggle, isOpen, bg = "bg-[#ffffff49]" }) => (
+const HamburgerButton = ({ toggle, isOpen, bg = "bg-[#ffffff69]" }) => (
   <div className="flex items-center gap-2">
     {!isOpen && (
       <button

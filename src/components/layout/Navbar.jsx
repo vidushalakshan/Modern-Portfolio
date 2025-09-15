@@ -92,7 +92,7 @@ const Navbar = ({ isOpen, setIsOpen }) => {
           >
             <Link
               href="/"
-              className="md:text-xl text-md font-bold text-[#F1F1F1] flex"
+              className="md:text-xl text-md font-bold text-black flex"
             >
               Vidusha
             </Link>

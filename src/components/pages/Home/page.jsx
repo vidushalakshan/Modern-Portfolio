@@ -25,9 +25,9 @@ const Page = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[150px] font-bold leading-tight text-black"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[150px] font-bold leading-tight text-black pt-13"
         >
-          VIDUSHA <br className="sm:hidden" /> LAKSHAN
+          VIDUSHA <br className="sm:hidden lg:block" /> LAKSHAN
         </motion.h1>
 
         {/* Arrow */}
@@ -60,8 +60,9 @@ const Page = () => {
         >
           <a href="mailto:yourmail@example.com" target="_blank" rel="noopener noreferrer">
             <Button variant="bgBlack" size="large" className="flex items-center gap-2">
-              <span>Contact</span>
-              <MdArrowOutward />
+              <span className="uppercase">Contact</span>
+              <span></span>
+              <MdArrowOutward size={22}/>
             </Button>
           </a>
         </motion.div>
