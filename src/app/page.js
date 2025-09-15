@@ -1,10 +1,12 @@
 import Navbar from "@/components/layout/Navbar";
+import Home from "@/components/pages/Home/page";
 
-
-export default function Home() {
+export default function page() {
   return (
     <div>
       <Navbar />
+      <Home />
+      {/* <SubNavbar /> */}
     </div>
   );
 }

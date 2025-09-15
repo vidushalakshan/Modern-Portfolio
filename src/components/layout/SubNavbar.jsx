@@ -31,7 +31,7 @@ const contentFadeVariants = {
   exit: { opacity: 0 },
 };
 
-const Navbar = ({ isOpen, setIsOpen }) => {
+const SubNavbar = ({ isOpen, setIsOpen }) => {
   const [shouldShowNav, setShouldShowNav] = useState(true);
   const [showModalContent, setShowModalContent] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
@@ -212,11 +212,23 @@ const Navbar = ({ isOpen, setIsOpen }) => {
 
                       {/* Contact / Footer Section */}
                       <div className="mt-10 md:mt-0 md:absolute bottom-12 max-sm:bottom-0 right-0 px-2 md:px-7 flex flex-col gap-2">
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                          <span className="text-2xl text-[#F1F1F1]">Whatsapp</span>
+                        <a
+                          href="http://"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className="text-2xl text-[#F1F1F1]">
+                            Whatsapp
+                          </span>
                         </a>
-                        <a href="http://" target="_blank" rel="noopener noreferrer">
-                          <span className="text-2xl text-[#F1F1F1]">Telegram</span>
+                        <a
+                          href="http://"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span className="text-2xl text-[#F1F1F1]">
+                            Telegram
+                          </span>
                         </a>
                         <a href="mailto:info@Xquirrel.com">
                           <span className="text-lg text-[#f1f1f183] underline">
@@ -245,4 +257,4 @@ const Navbar = ({ isOpen, setIsOpen }) => {
   );
 };
 
-export default Navbar;
+export default SubNavbar;
