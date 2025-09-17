@@ -2,7 +2,9 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>Service</div>
+    <section className='mt-20'>
+      <h1 className='uppercase'>What i do /</h1>
+    </section>
   )
 }
 

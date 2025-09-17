@@ -7,6 +7,7 @@ export default function page() {
     <div>
       <Navbar />
       <Home />
+      <Service />
       {/* <SubNavbar /> */}
     </div>
   );

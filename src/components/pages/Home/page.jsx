@@ -62,7 +62,7 @@ const Page = () => {
             <Button variant="bgBlack" size="large" className="flex items-center gap-2">
               <span className="uppercase">Contact</span>
               <span></span>
-              <MdArrowOutward size={22}/>
+              <MdArrowOutward size={24}/>
             </Button>
           </a>
         </motion.div>
