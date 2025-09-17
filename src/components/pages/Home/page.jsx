@@ -15,19 +15,19 @@ const Page = () => {
         src={Images.homeImg}
         alt="Background"
         priority
-        className="absolute right-0 bottom-0 object-cover  w-[250px] sm:w-[350px] md:w-[450px] lg:w-[550px]"
+        className="absolute right-0 bottom-0 object-cover  md:w-[450px] lg:w-[550px] max-sm:hidden md:block"
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col">
+      <div className="relative z-10 flex flex-col max-sm:items-center">
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[150px] mt-5 font-bold leading-tight text-black pt-13"
+          className="text-4xl max-sm:text-6xl max-sm:pt-0 md:text-7xl lg:text-8xl xl:text-[150px] mt-5 font-bold leading-tight text-black lg:pt-13 max-sm:text-center"
         >
-          VIDUSHA <br className="sm:hidden lg:block" /> <h1 className="relative bottom-5">LAKSHAN</h1>
+          VIDUSHA <br className="sm:hidden lg:block" /> <span className="relative bottom-5">LAKSHAN</span>
         </motion.h1>
 
         {/* Arrow */}
@@ -36,7 +36,7 @@ const Page = () => {
           animate={{ opacity: 1, rotate: 0 }}
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
         >
-          <LuArrowDownRight size={50} className="text-[#b6b6b0] relative bottom-5" />
+          <LuArrowDownRight size={50} className="text-[#b6b6b0] relative bottom-5 max-sm:hidden lg:block" />
         </motion.div>
 
         {/* Subtitle */}
@@ -44,7 +44,7 @@ const Page = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-lg sm:max-w-1/3"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-lg sm:max-w-1/3 max-sm:text-center"
         >
           Open to job opportunities worldwide. Passionate about building
           polished, intuitive, and thoughtful digital experiences that leave a
@@ -62,7 +62,7 @@ const Page = () => {
             <Button variant="bgBlack" size="large" className="flex items-center gap-2">
               <span className="uppercase">Contact</span>
               <span></span>
-              <MdArrowOutward size={24}/>
+              <MdArrowOutward size={24} className="max-sm:hidden lg:block"/>
             </Button>
           </a>
         </motion.div>

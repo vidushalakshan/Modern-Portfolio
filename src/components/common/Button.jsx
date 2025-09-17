@@ -20,7 +20,7 @@ export const Button = ({
       // "px-[17px] px-[10px] py-[10px] py-[14px] text-[10px] text-[16px]",
       "px-4.5 py-3.5 text-[10px] text-[16px]",
     medium: "px-3 py-3 px-6 sm:py-3 text-[16px] sm:text-base h-[48px]",
-    large: "px-8 py-4 text-lg h-[56px]",
+    large: "px-8 py-4 lg:text-lg h-[56px] max-sm:text-[13px]",
   };
 
   const variantStyles = {
