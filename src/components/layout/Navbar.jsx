@@ -36,6 +36,7 @@ const contentFadeVariants = {
   exit: { opacity: 0 },
 };
 
+
 const Navbar = ({ isOpen, setIsOpen }) => {
   const [shouldShowNav, setShouldShowNav] = useState(true);
   const [showModalContent, setShowModalContent] = useState(false);

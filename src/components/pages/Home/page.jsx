@@ -15,7 +15,7 @@ const Page = () => {
         src={Images.homeImg}
         alt="Background"
         priority
-        className="absolute right-0 bottom-0 object-cover rounded-t-full w-[250px] sm:w-[350px] md:w-[450px] lg:w-[550px]"
+        className="absolute right-0 bottom-0 object-cover  w-[250px] sm:w-[350px] md:w-[450px] lg:w-[550px]"
       />
 
       {/* Content */}
@@ -25,9 +25,9 @@ const Page = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[150px] font-bold leading-tight text-black pt-13"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[150px] mt-5 font-bold leading-tight text-black pt-13"
         >
-          VIDUSHA <br className="sm:hidden lg:block" /> LAKSHAN
+          VIDUSHA <br className="sm:hidden lg:block" /> <h1 className="relative bottom-5">LAKSHAN</h1>
         </motion.h1>
 
         {/* Arrow */}
@@ -36,7 +36,7 @@ const Page = () => {
           animate={{ opacity: 1, rotate: 0 }}
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
         >
-          <LuArrowDownRight size={50} className="text-[#b6b6b0] mb-5" />
+          <LuArrowDownRight size={50} className="text-[#b6b6b0] relative bottom-5" />
         </motion.div>
 
         {/* Subtitle */}
