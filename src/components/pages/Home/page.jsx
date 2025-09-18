@@ -25,7 +25,7 @@ const Page = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-4xl max-sm:text-6xl max-sm:pt-0 md:text-7xl lg:text-8xl xl:text-[150px] mt-5 font-bold leading-tight text-black lg:pt-13 max-sm:text-center"
+          className=" max-sm:text-6xl max-sm:pt-0 md:text-7xl lg:text-8xl xl:text-[150px] mt-5 font-bold leading-tight text-black lg:pt-13 max-sm:text-center"
         >
           VIDUSHA <br className="sm:hidden lg:block" /> <span className="relative bottom-5">LAKSHAN</span>
         </motion.h1>
