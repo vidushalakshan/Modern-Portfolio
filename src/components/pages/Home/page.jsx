@@ -27,7 +27,7 @@ const Page = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className=" max-sm:text-6xl max-sm:pt-0 md:text-7xl lg:text-8xl xl:text-[150px] mt-5 font-bold leading-tight text-black lg:pt-13 max-sm:text-center"
         >
-          VIDUSHA <br className="sm:hidden lg:block" /> <span className="relative bottom-5">LAKSHAN</span>
+          VIDUSHA <br className="sm:hidden lg:block" /> <span className="relative bottom-8">LAKSHAN</span>
         </motion.h1>
 
         {/* Arrow */}
@@ -36,7 +36,7 @@ const Page = () => {
           animate={{ opacity: 1, rotate: 0 }}
           transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
         >
-          <LuArrowDownRight size={50} className="text-[#b6b6b0] relative bottom-5 max-sm:hidden lg:block" />
+          <LuArrowDownRight size={50} className="text-[#b6b6b0] relative bottom-10 max-sm:hidden lg:block" />
         </motion.div>
 
         {/* Subtitle */}
@@ -44,7 +44,7 @@ const Page = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-lg sm:max-w-1/3 max-sm:text-center"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-lg sm:max-w-1/3 max-sm:text-center relative bottom-6"
         >
           Open to job opportunities worldwide. Passionate about building
           polished, intuitive, and thoughtful digital experiences that leave a
@@ -56,7 +56,6 @@ const Page = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.2, duration: 0.7 }}
-          className="mt-6"
         >
           <a href="mailto:yourmail@example.com" target="_blank" rel="noopener noreferrer">
             <Button variant="bgBlack" size="large" className="flex items-center gap-2">
