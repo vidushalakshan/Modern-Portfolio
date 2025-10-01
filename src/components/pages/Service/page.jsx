@@ -47,6 +47,7 @@ const Service = () => {
     };
   }, []);
 
+
   // Static data instead of translations
   const sectionData = [
     {
@@ -81,14 +82,14 @@ const Service = () => {
   ];
 
   return (
-    <section className="mt-20 px-6 sm:px-12 relative">
+    <section className="sm:mt-20 max-sm:mt-6 px-6 sm:px-12 relative">
       {/* Left side heading */}
       <h1 className="uppercase text-[clamp(3rem,10vw,8rem)] font-bold text-[#e8e8e3] leading-tight">
         What I Do /
       </h1>
 
       {/* Right side content */}
-      <div className="mt-20 max-sm:mt-10 flex sm:absolute sm:right-42 sm:top-24 max-w-[700px] mb-[300px] gap-6 relative">
+      <div className="mt-20 max-sm:mt-10 flex sm:absolute sm:right-42 sm:top-24 max-w-[700px] sm:mb-[300px] gap-6 relative">
         <span className="uppercase text-[16px] mt-2 text-gray-400 max-sm:text-[12px]">
           (Services)
         </span>
@@ -109,12 +110,12 @@ const Service = () => {
           {/* Sticky Content */}
           <div className="sticky max-md:py-10 max-sm:pb-0 px-3 top-0 h-screen flex flex-col justify-between items-center md:flex-row max-md:items-start gap-12 max-md:gap-4">
             {/* Left Section Titles */}
-            <div className="w-1/2 flex flex-col justify-center">
+            <div className="w-1/2 max-sm:w-full flex flex-col justify-center">
               {sectionData.map((section) => (
                 <motion.h1
                   key={section.id}
                   className={classNames(
-                    "max-sm:text-5xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl px-4 font-bold max-md:font-light leading-tight transition-colors duration-500",
+                    "max-sm:text-3xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl px-4 font-bold max-md:font-light leading-tight transition-colors duration-500",
                     activeSection === section.id
                       ? "text-[#EFEAE3]"
                       : "text-[#504A45]"
@@ -152,10 +153,6 @@ const Service = () => {
                 </motion.div>
               </AnimatePresence>
             </div>
-
-            <p className="w-full max-sm:block hidden text-[#636363] text-xs text-center mb-10">
-              Explore what I do
-            </p>
           </div>
         </section>
       </div>
@@ -164,7 +161,16 @@ const Service = () => {
 };
 
 const RightItems = ({ items, revealProgress }) => {
+    const [isSmall, setIsSmall] = useState(false);
   const totalItems = items.length;
+
+  
+  useEffect(() => {
+    const checkSize = () => setIsSmall(window.innerWidth <= 640); // max-sm
+    checkSize();
+    window.addEventListener("resize", checkSize);
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
 
   return (
     <div className="flex flex-col justify-center w-full lg:ml-20">
@@ -181,14 +187,14 @@ const RightItems = ({ items, revealProgress }) => {
             transition={{ duration: 0.3 }}
           >
             <motion.div
-              className="flex items-center gap-3"
-              animate={{ paddingLeft: isVisible ? "3.75rem" : "1rem" }}
+              className="flex items-center gap-3 max-sm:pl-0"
+              animate={{paddingLeft: isSmall ? "0rem" : isVisible ? "3.75rem" : "1rem" }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="text-[1rem] left-0 text-white/50 max-sm:font-light max-md:text-base 2xl:text-xl">
+              <div className="md:text-[1rem] max-sm:text-[10px] left-0 text-white/50 max-sm:font-light max-md:text-base 2xl:text-xl">
                 {String(index + 1).padStart(2, "0")}
               </div>
-              <h3 className="text-[1rem] pl-5 max-lg:pl-3 text-[#F4F4F4] whitespace-nowrap max-md:font-light 2xl:text-xl max-sm:text-base">
+              <h3 className="md:text-[1rem] max-sm:text-[10px] md:pl-5 max-sm:pl-0 max-lg:pl-3 text-[#F4F4F4] whitespace-nowrap max-md:font-light 2xl:text-xl max-sm:text-base">
                 {item}
               </h3>
             </motion.div>
