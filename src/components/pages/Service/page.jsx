@@ -115,7 +115,7 @@ const Service = () => {
                 <motion.h1
                   key={section.id}
                   className={classNames(
-                    "max-sm:text-3xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl px-4 font-bold max-md:font-light leading-tight transition-colors duration-500",
+                    "max-sm:text-3xl md:text-4xl sm:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl px-4 font-bold max-md:font-light leading-tight transition-colors duration-500",
                     activeSection === section.id
                       ? "text-[#EFEAE3]"
                       : "text-[#504A45]"
@@ -191,17 +191,17 @@ const RightItems = ({ items, revealProgress }) => {
               animate={{paddingLeft: isSmall ? "0rem" : isVisible ? "3.75rem" : "1rem" }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="md:text-[1rem] max-sm:text-[10px] left-0 text-white/50 max-sm:font-light max-md:text-base 2xl:text-xl">
+              <div className="md:text-[0.7rem] max-sm:text-[10px] left-0 text-white/50 max-sm:font-light max-md:text-base 2xl:text-xl">
                 {String(index + 1).padStart(2, "0")}
               </div>
-              <h3 className="md:text-[1rem] max-sm:text-[10px] md:pl-5 max-sm:pl-0 max-lg:pl-3 text-[#F4F4F4] whitespace-nowrap max-md:font-light 2xl:text-xl max-sm:text-base">
+              <h3 className="md:text-[0.7rem] max-sm:text-[10px] md:pl-5 max-sm:pl-0 max-lg:pl-3 text-[#F4F4F4] whitespace-nowrap max-md:font-light 2xl:text-xl max-sm:text-base">
                 {item}
               </h3>
             </motion.div>
 
             {index !== items.length - 1 && (
               <hr className="mt-8 border-[#ffffff1c] max-sm:mt-6 w-full relative 2xl:left-15" />
-            )}
+            )} 
           </motion.div>
         );
       })}
