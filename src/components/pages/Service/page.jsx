@@ -84,16 +84,16 @@ const Service = () => {
   return (
     <section className="sm:mt-20 max-sm:mt-6 px-6 sm:px-12 relative">
       {/* Left side heading */}
-      <h1 className="uppercase text-[clamp(3rem,10vw,8rem)] font-bold text-[#e8e8e3] leading-tight">
+      <h1 className="uppercase text-[clamp(3rem,10vw,8rem)] font-bold text-[#e8e8e3] max-sm:text-[2.6rem] leading-tight">
         What I Do /
       </h1>
 
       {/* Right side content */}
-      <div className="mt-20 max-sm:mt-10 flex sm:absolute sm:right-42 sm:top-24 max-w-[700px] sm:mb-[300px] gap-6 relative">
-        <span className="uppercase text-[16px] mt-2 text-gray-400 max-sm:text-[12px]">
+      <div className="mt-20 max-sm:mt-10 flex max-sm:flex-col sm:absolute sm:right-42 sm:top-24 max-w-[700px] sm:mb-[300px] gap-6 relative">
+        <span className="uppercase text-[16px] mt-2 text-gray-400 max-sm:text-[16px]">
           (Services)
         </span>
-        <p className="text-[#e8e8e3] text-[23px] leading-relaxed max-sm:text-[12px]">
+        <p className="text-[#e8e8e3] text-[23px] leading-relaxed max-sm:text-[16px]">
           I specialize in building full-stack web applications that are fast,
           reliable, and user-friendly. With a solid foundation in both frontend
           and backend technologies, I help bring ideas to life whether it’s for
