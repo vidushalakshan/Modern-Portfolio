@@ -15,7 +15,7 @@ const Page = () => {
         src={Images.homeImg}
         alt="Background"
         priority
-        className="absolute right-0 bottom-0 object-cover  md:w-[450px] lg:w-[550px] max-sm:hidden md:block"
+        className="absolute right-0 bottom-0 object-cover max-md:hidden md:w-[450px] lg:w-[550px] max-sm:hidden md:block"
       />
 
       {/* Content */}
