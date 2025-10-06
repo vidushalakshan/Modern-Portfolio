@@ -101,7 +101,7 @@ const Service = () => {
         </p>
       </div>
 
-      <div className="w-full flex justify-center items-center mt-30">
+      <div className="w-full flex justify-center items-center max-sm:mt-10 mt-30">
         <section
           id="services"
           ref={containerRef}
