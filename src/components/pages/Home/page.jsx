@@ -8,7 +8,7 @@ import { Button } from "@/components/common/Button";
 
 const Page = () => {
   return (
-    <section className="relative min-h-screen bg-[#e8e8e3] flex items-center justify-center overflow-hidden px-6 sm:px-12">
+    <section className="relative min-h-screen bg-[#e8e8e3] flex items-center justify-start overflow-hidden px-6 sm:px-12">
       {/* Background Image */}
       <Image
         src={Images.homeImg}
@@ -18,7 +18,7 @@ const Page = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col max-sm:items-center">
+      <div className="relative z-10 flex flex-col max-sm:items-center 2xl:gap-6 lg:gap-4 md:gap-3 sm:gap-3 max-sm:gap-4">
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
