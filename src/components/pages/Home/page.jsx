@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { LuArrowDownRight } from "react-icons/lu";
 import { MdArrowOutward } from "react-icons/md";
@@ -44,7 +43,7 @@ const Page = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="text-base sm:text-lg md:text-[18px]  lg:text-2xl text-gray-700 max-w-lg max-md:w-2/3 sm:max-w-1/3 max-sm:text-center relative max-sm:mt-10 md:mt-10 bottom-6"
+          className="text-base sm:text-lg md:text-[18px]  lg:text-2xl text-gray-700 max-w-lg max-md:w-2/3 sm:max-w-1/3 max-sm:text-center relative max-sm:mt-10 md:mt-10"
         >
           Open to job opportunities worldwide. Passionate about building
           polished, intuitive, and thoughtful digital experiences that leave a
@@ -55,8 +54,8 @@ const Page = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.2, duration: 0.7 }}
-          className="md:mt-5"
+          transition={{ delay: 1.2, duration: 0.7 }}  
+          className="lg:mt-3 lg:mb-5 md:mt-5 max-sm:mt-8"
         >
           <a href="mailto:yourmail@example.com" target="_blank" rel="noopener noreferrer">
             <Button variant="bgBlack" size="large" className="flex items-center gap-2">
