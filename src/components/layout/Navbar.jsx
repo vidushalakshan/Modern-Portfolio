@@ -109,7 +109,7 @@ const Navbar = ({ isOpen: propsIsOpen, setIsOpen: propsSetIsOpen }) => {
                 <h2 className="text-white text-[25vw] font-black italic uppercase leading-none">Creative</h2>
               </div>
 
-              <nav className="relative z-10 flex flex-col items-start gap-2">
+              <nav className="relative z-10 flex flex-col items-center gap-2">
                 {modalNavItems.map((item, i) => (
                   <motion.div
                     key={item.key}
