@@ -2,11 +2,12 @@ import Navbar from "@/components/layout/Navbar";
 import About from "@/components/pages/About/page";
 import Home from "@/components/pages/Home/page";
 import Service from "@/components/pages/Service/page";
+import Work from "@/components/pages/Work/page";
 
 export default function page() {
   return (
-    <main className="relative bg-[#0a0a0a]">
-      <Navbar />
+    <main className="relative bg-[#0a0a0a] ">
+      <Navbar/>
       
       {/* Home Section - Now Sticky */}
       <div className="sticky top-0 h-screen z-0">
@@ -20,7 +21,7 @@ export default function page() {
       
       {/* Other sections follow normally */}
       <div className="relative z-20 bg-[#0a0a0a]">
-         {/* Future Content */}
+          <Work />
       </div>
     </main>
   );
