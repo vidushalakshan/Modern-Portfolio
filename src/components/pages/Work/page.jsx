@@ -68,7 +68,7 @@ const Experience = () => {
   ];
 
   return (
-    <section ref={targetRef} className="relative h-[400vh] bg-[#050505]">
+    <section ref={targetRef} className="relative h-[200vh] bg-[#050505]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         
         {/* Background Decorative Text */}
