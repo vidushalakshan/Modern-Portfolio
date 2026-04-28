@@ -112,7 +112,7 @@ const Service = () => {
       </div>
 
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-        <div className="relative w-full max-w-7xl px-8 z-10 h-full flex items-center">
+        <div className="relative w-full  px-12 z-10 h-full flex items-center">
           
           {sectionData.map((section) => {
             const opacity = useTransform(
