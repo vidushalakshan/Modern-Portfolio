@@ -4,6 +4,7 @@ import Home from "@/components/pages/Home/page";
 import Service from "@/components/pages/Service/page";
 import Work from "@/components/pages/Work/page";
 import Project from "@/components/pages/Project/page";
+import Footer from "@/components/pages/Footer/page";
 
 export default function page() {
   return (
@@ -31,6 +32,10 @@ export default function page() {
 
       <div className="relative z-20 bg-[#0a0a0a]">
           <Project />
+      </div>
+
+      <div className="relative z-20 bg-[#0a0a0a]">
+          <Footer />
       </div>
     </main>
   );
