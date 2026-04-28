@@ -1,7 +1,14 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { MdOutlineSecurity, Md3dRotation, MdShoppingCart, MdDirectionsCar, MdMenuBook, MdArrowOutward } from "react-icons/md";
+import {
+  MdOutlineSecurity,
+  Md3dRotation,
+  MdShoppingCart,
+  MdDirectionsCar,
+  MdMenuBook,
+  MdArrowOutward,
+} from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 
 // Parallax Card Component for that GTA VI "Depth" feel
@@ -58,8 +65,12 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         <h3 className="text-3xl font-black text-white italic uppercase tracking-tighter mb-4 leading-none">
-          {project.title.split(' ').map((word, i) => (
-            <span key={i} className="block group-hover:translate-x-2 transition-transform duration-300" style={{ transitionDelay: `${i * 50}ms` }}>
+          {project.title.split(" ").map((word, i) => (
+            <span
+              key={i}
+              className="block group-hover:translate-x-2 transition-transform duration-300"
+              style={{ transitionDelay: `${i * 50}ms` }}
+            >
               {word}
             </span>
           ))}
@@ -71,17 +82,28 @@ const ProjectCard = ({ project, index }) => {
 
         <div className="flex flex-wrap gap-2 mb-8">
           {project.tech.map((t) => (
-            <span key={t} className="text-[9px] font-mono border border-white/5 px-2 py-1 text-white/40 uppercase group-hover:border-[#FF5F00]/50 group-hover:text-white transition-colors">
+            <span
+              key={t}
+              className="text-[9px] font-mono border border-white/5 px-2 py-1 text-white/40 uppercase group-hover:border-[#FF5F00]/50 group-hover:text-white transition-colors"
+            >
               {t}
             </span>
           ))}
         </div>
 
         <div className="flex items-center justify-between">
-          <a href={project.link} className="flex items-center gap-2 text-[10px] font-black italic uppercase text-white/40 hover:text-[#FF5F00] transition-colors">
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[10px] font-black italic uppercase text-white/40 hover:text-[#FF5F00] transition-colors"
+          >
             <FaGithub size={14} /> Open_Source
           </a>
-          <MdArrowOutward className="text-white/20 group-hover:text-[#FF5F00] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" size={20} />
+          <MdArrowOutward
+            className="text-white/20 group-hover:text-[#FF5F00] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
+            size={20}
+          />
         </div>
       </div>
 
@@ -93,11 +115,51 @@ const ProjectCard = ({ project, index }) => {
 
 const Projects = () => {
   const projects = [
-    { id: "M-01", title: "Job Skill Platform", description: "Full-stack ecosystem with JWT security and secure email protocols.", tech: ["Spring Boot", "React", "JWT", "MySQL"], link: "https://github.com/vidushalakshan/JobAndSkill-Development-PlatForm", icon: <MdOutlineSecurity /> },
-    { id: "M-02", title: "3DTech Store", description: "Interactive 3D viewer with real-time HUD and optimized preview modes.", tech: ["Next.js", "Three.js", "GSAP", "R3F"], link: "https://github.com/vidushalakshan/3D-Ecommerce", icon: <Md3dRotation /> },
-    { id: "M-03", title: "MERN E-Commerce", description: "Scalable retail platform with Stripe integration and Redux state management.", tech: ["MongoDB", "Express", "React", "Node"], link: "https://github.com/vidushalakshan/E-Commerce-web", icon: <MdShoppingCart /> },
-    { id: "M-04", title: "EcoRide Rental", description: "Spring-based management system with automated invoicing and tracking.", tech: ["Spring MVC", "MySQL", "Bootstrap"], link: "https://github.com/vidushalakshan/Car-Rental-System", icon: <MdDirectionsCar /> },
-    { id: "M-05", title: "Book Management", description: "JavaFX desktop application with automated JasperReports logging.", tech: ["Java", "JavaFX", "MySQL", "Jasper"], link: "https://github.com/vidushalakshan/Book-Shop", icon: <MdMenuBook /> }
+    {
+      id: "M-01",
+      title: "Job Skill Platform",
+      description:
+        "Full-stack ecosystem with JWT security and secure email protocols.",
+      tech: ["Spring Boot", "React", "JWT", "MySQL"],
+      link: "https://github.com/vidushalakshan/JobAndSkillDevelopmentPlatForm",
+      icon: <MdOutlineSecurity />,
+    },
+    {
+      id: "M-02",
+      title: "3DTech Store",
+      description:
+        "Interactive 3D viewer with real-time HUD and optimized preview modes.",
+      tech: ["Next.js", "Three.js", "GSAP", "R3F"],
+      link: "https://github.com/vidushalakshan/3D-Ecommerce",
+      icon: <Md3dRotation />,
+    },
+    {
+      id: "M-03",
+      title: "MERN E-Commerce",
+      description:
+        "Scalable retail platform with Stripe integration and Redux state management.",
+      tech: ["MongoDB", "Express", "React", "Node"],
+      link: "https://github.com/vidushalakshan/E-Commerce-web",
+      icon: <MdShoppingCart />,
+    },
+    {
+      id: "M-04",
+      title: "EcoRide Rental",
+      description:
+        "Spring-based management system with automated invoicing and tracking.",
+      tech: ["Spring MVC", "MySQL", "Bootstrap"],
+      link: "https://github.com/vidushalakshan/Car_Rental_System",
+      icon: <MdDirectionsCar />,
+    },
+    {
+      id: "M-05",
+      title: "Book Management",
+      description:
+        "JavaFX desktop application with automated JasperReports logging.",
+      tech: ["Java", "JavaFX", "MySQL", "Jasper"],
+      link: "https://github.com/vidushalakshan/Book_Shop",
+      icon: <MdMenuBook />,
+    },
   ];
 
   return (
@@ -108,7 +170,8 @@ const Projects = () => {
             // Accessing_Archive_v2.6
           </span>
           <h2 className="text-7xl md:text-9xl font-black text-white italic uppercase tracking-tighter leading-none">
-            MISSION <br /> <span className="text-transparent stroke-text">RECORDS</span>
+            MISSION <br />{" "}
+            <span className="text-transparent stroke-text">RECORDS</span>
           </h2>
         </div>
 
@@ -120,7 +183,9 @@ const Projects = () => {
       </div>
 
       <style jsx>{`
-        .stroke-text { -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2); }
+        .stroke-text {
+          -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+        }
       `}</style>
     </section>
   );
