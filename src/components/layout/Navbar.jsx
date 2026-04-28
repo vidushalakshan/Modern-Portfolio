@@ -36,7 +36,7 @@ const Navbar = ({ isOpen: propsIsOpen, setIsOpen: propsSetIsOpen }) => {
 
   return (
     <>
-      <div className="fixed left-0 w-full z-[200] px-12 py-8 pointer-events-none">
+      <div className="fixed left-0 w-full z-[200] px-12 py-8 pointer-events-none opacity-60 hover:opacity-100 transition-opacity duration-300">
         <div className="relative mx-auto max-w-[1800px] flex items-center justify-between pointer-events-auto">
           
           {/* LOGO: Black/White/Orange */}
