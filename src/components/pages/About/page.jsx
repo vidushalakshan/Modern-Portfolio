@@ -40,7 +40,7 @@ const About = () => {
               My expertise lies in architecting scalable solutions using <span className="text-[#FF5F00]">React, Next.js, and Spring Boot</span>.
             </p>
             <p>
-              Beyond the code, I focus on the "Cinematic UX"—ensuring that enterprise-grade logic 
+              Beyond the code, I focus on the "Cinematic UX" ensuring that enterprise grade logic 
               meets polished, intuitive design. With a background in <span className="text-white">Full-Stack Development</span>, 
               I bridge the gap between complex backend systems and fluid frontend experiences.
             </p>
