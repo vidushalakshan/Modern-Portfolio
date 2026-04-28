@@ -73,7 +73,9 @@ const Page = () => {
           className="mt-10"
         >
           <a href="mailto:contact@vidusha.me" className="group">
-            <Button className="relative flex items-center gap-4 bg-white text-black hover:bg-orange-600 hover:text-white transition-all duration-500 py-6 px-10 rounded-none overflow-hidden">
+            <Button 
+            variant="primary"
+            className="relative flex items-center gap-4  hover:text-white transition-all duration-500 py-6 px-10 overflow-hidden">
               <span className="uppercase font-black italic tracking-widest text-lg">
                 Inquire Now
               </span>
