@@ -16,11 +16,11 @@ export const Button = ({
     "relative overflow-hidden rounded-full font-medium leading-none flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-colors duration-50";
 
   const sizeStyles = {
-    small:
-      // "px-[17px] px-[10px] py-[10px] py-[14px] text-[10px] text-[16px]",
-      "px-4.5 py-3.5 text-[10px] text-[16px]",
-    medium: "px-3 py-3 px-6 sm:py-3 text-[16px] sm:text-base h-[48px]",
-    large: "px-8  py-4 max-sm:py-2 lg:text-lg h-[56px] max-sm:text-[13px]",
+    small: "px-4.5 py-3.5 text-[10px] text-[16px]",
+    // REMOVED: h-[48px] and the double px- classes
+    medium: "px-6 py-4 text-base", 
+    // REMOVED: h-[56px]
+    large: "px-8 py-4 lg:text-lg",
   };
 
   const variantStyles = {

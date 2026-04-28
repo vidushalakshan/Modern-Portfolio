@@ -21,22 +21,19 @@ const Page = () => {
         {/* THE VIGNETTE */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_90%)]" />
 
-        {/* SCANLINES */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
       </div>
 
-      {/* CONTENT LAYER */}
-      <div className="relative z-10 w-full flex flex-col max-sm:items-center">
-        {/* Availability Badge */}
+      <div className="relative z-10 w-full flex flex-col max-sm:items-center max-sm:text-center">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex items-center gap-3 mb-6"
+          className="flex items-center gap-3 mb-6  "
         >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-600"></span>
+          <span className="relative flex  h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75 max-sm:hidden"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-600 max-sm:hidden"></span>
           </span>
           <span className="text-white/60 font-mono text-[10px] uppercase tracking-[0.3em]">
             Status: Available for Global Remote Work
@@ -48,7 +45,7 @@ const Page = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-orange-600 font-black tracking-[0.4em] uppercase text-sm mb-2"
+          className="text-orange-600 font-black tracking-[0.4em] uppercase text-sm mb-2 max-md:hidden md:block"
         >
           Full-Stack Software Engineer - 2026
         </motion.span>
@@ -73,9 +70,9 @@ const Page = () => {
           transition={{ delay: 0.5, duration: 1 }}
           className="mt-8 text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl max-sm:text-center leading-relaxed font-medium"
         >
-          Architecting high-performance web systems with a focus on immersive UX. 
-          Currently building <span className="text-white">LankaVibe</span> and 
-          available for worldwide engineering collaborations.
+          Architecting high-performance web systems with a focus on immersive
+          UX. Currently building <span className="text-white">LankaVibe</span>{" "}
+          and available for worldwide engineering collaborations.
         </motion.p>
 
         {/* Action Button */}
@@ -85,17 +82,21 @@ const Page = () => {
           transition={{ delay: 0.8, duration: 0.5 }}
           className="mt-10"
         >
-          <a href="mailto:contact@vidusha.me" className="group">
+          <a
+            href="mailto:vidushalakshan7890@gmail.com"
+            className="group inline-block w-full sm:w-auto"
+          >
             <Button
               variant="primary"
-              className="relative flex items-center gap-6 hover:bg-orange-600 transition-all duration-500 py-6 px-12 rounded-none bg-transparent border border-white/20"
+              size="medium"
+              className="relative flex items-center justify-center border-white/20 rounded-none gap-3 sm:gap-6"
             >
-              <span className="uppercase font-black italic tracking-widest text-lg text-white">
+              <span className="uppercase font-black italic tracking-widest text-white whitespace-nowrap text-[14px] sm:text-base">
                 Start a Project
               </span>
               <MdArrowOutward
                 size={24}
-                className="text-orange-600 ml-2 group-hover:text-white group-hover:rotate-45 transition-transform duration-300"
+                className="text-orange-600 group-hover:text-white group-hover:rotate-45 transition-transform duration-300 shrink-0"
               />
             </Button>
           </a>
