@@ -7,26 +7,29 @@ import { Button } from "@/components/common/Button";
 import videos from "@/constants/video";
 
 const Page = () => {
-
   return (
     <section className="relative h-screen w-full bg-[#0a0a0a] flex items-center justify-start overflow-hidden px-6 sm:px-12">
       {/* BACKGROUND LAYER: GTA VI uses deep vignettes and saturated imagery */}
       {/* BACKGROUND VIDEO LAYER */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           autoPlay
           loop
           muted
           playsInline
           src={videos.home}
-          className="h-full w-full object-cover  brightness-[0.4] contrast-100"
-        ></video>
+          className="h-full w-full object-cover grayscale brightness-[0.5]  scale-110"
+          /* scale-110 prevents white edges during parallax */
+        />
 
-        <div className="absolute inset-0 bg-gradient-to-r  to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
+        {/* THE VIGNETTE: This makes the center clear and edges dark */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_80%)]" />
 
-        {/* Subtle Scanline Overlay for the whole screen */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.03] ,linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
+        {/* OPTIONAL: Subtle Accent Glow */}
+        <div className="absolute top-0 left-0 w-full h-full bg-orange-600/5 mix-blend-overlay pointer-events-none" />
+
+        {/* SCANLINES: Fixed your syntax for a cleaner look */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
       </div>
 
       {/* CONTENT LAYER */}
@@ -73,9 +76,10 @@ const Page = () => {
           className="mt-10"
         >
           <a href="mailto:contact@vidusha.me" className="group">
-            <Button 
-            variant="primary"
-            className="relative flex items-center gap-4  hover:text-white transition-all duration-500 py-6 px-10 overflow-hidden">
+            <Button
+              variant="primary"
+              className="relative flex items-center gap-4  hover:text-white transition-all duration-500 py-6 px-10 overflow-hidden"
+            >
               <span className="uppercase font-black italic tracking-widest text-lg">
                 Inquire Now
               </span>
