@@ -5,11 +5,23 @@ import Service from "@/components/pages/Service/page";
 
 export default function page() {
   return (
-    <div>
+    <main className="relative bg-[#0a0a0a]">
       <Navbar />
-      <Home />
-      <Service />
-      {/* <SubNavbar /> */}
-    </div>
+      
+      {/* Home Section - Now Sticky */}
+      <div className="sticky top-0 h-screen z-0">
+        <Home />
+      </div>
+
+      {/* Service Section - Slides OVER Home */}
+      <div className="relative z-10">
+        <Service />
+      </div>
+      
+      {/* Other sections follow normally */}
+      <div className="relative z-20 bg-[#0a0a0a]">
+         {/* Future Content */}
+      </div>
+    </main>
   );
 }

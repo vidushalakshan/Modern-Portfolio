@@ -1,71 +1,105 @@
 "use client";
 import Image from "next/image";
-import { LuArrowDownRight } from "react-icons/lu";
 import { MdArrowOutward } from "react-icons/md";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Images from "../../../constants/images";
 import { Button } from "@/components/common/Button";
+import videos from "@/constants/video";
 
 const Page = () => {
+
   return (
-    <section className="relative min-h-screen bg-[#e8e8e3] flex items-center justify-start overflow-hidden px-6 sm:px-12">
-      {/* Background Image */}
-      <Image
-        src={Images.homeImg}
-        alt="Background"
-        priority
-        className="absolute right-0 bottom-0 object-cover max-md:hidden md:w-[480px] lg:w-[570px] 2xl:w-[630px] max-sm:hidden md:block"
-      />
+    <section className="relative h-screen w-full bg-[#0a0a0a] flex items-center justify-start overflow-hidden px-6 sm:px-12">
+      {/* BACKGROUND LAYER: GTA VI uses deep vignettes and saturated imagery */}
+      {/* BACKGROUND VIDEO LAYER */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          src={videos.home}
+          className="h-full w-full object-cover  brightness-[0.4] contrast-100"
+        ></video>
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col max-sm:items-center 2xl:gap-6 lg:gap-4 md:gap-3 sm:gap-3 max-sm:gap-4">
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className=" max-sm:text-6xl max-sm:pt-0 md:text-7xl max-md:text-8xl lg:text-8xl xl:text-[150px] mt-5 font-bold leading-tight text-black lg:pt-13 max-sm:text-center"
+        <div className="absolute inset-0 bg-gradient-to-r  to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
+
+        {/* Subtle Scanline Overlay for the whole screen */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03] ,linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
+      </div>
+
+      {/* CONTENT LAYER */}
+      <div className="relative z-10 w-full flex flex-col max-sm:items-center">
+        {/* Top Tagline */}
+        <motion.span
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-orange-600 font-black tracking-[0.4em] uppercase text-sm mb-2"
         >
-          VIDUSHA <br className="sm:hidden lg:block" /> <span className="relative bottom-8 max-sm:top-[1px] md:top-[1px]">LAKSHAN</span>
-        </motion.h1>
+          Software Engineer // 2026
+        </motion.span>
 
-        {/* Arrow */}
-        <motion.div
-          initial={{ opacity: 0, rotate: -45 }}
-          animate={{ opacity: 1, rotate: 0 }}
-          transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-        >
-          <LuArrowDownRight size={50} className="text-[#b6b6b0] relative lg:top-1 max-sm:hidden md:hidden lg:block" />
-        </motion.div>
+        {/* Heading: Bold, Italic, Massive (Rockstar Style) */}
+        <div className="overflow-hidden">
+          <motion.h1
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-[clamp(3.5rem,12vw,10rem)] font-[900] italic leading-[0.85] text-white uppercase tracking-tighter"
+          >
+            VIDUSHA <br />
+            <span className="text-transparent stroke-text">LAKSHAN</span>
+          </motion.h1>
+        </div>
 
-        {/* Subtitle */}
+        {/* Description: High contrast and tight */}
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 1 }}
-          className="text-base sm:text-lg md:text-[18px]  lg:text-2xl text-gray-700 max-w-lg max-md:w-2/3 sm:max-w-1/3 max-sm:text-center relative max-sm:mt-10 md:mt-10"
+          transition={{ delay: 0.5, duration: 1 }}
+          className="mt-8 text-base sm:text-lg md:text-xl text-gray-300 max-w-xl max-sm:text-center leading-relaxed font-medium"
         >
-          Open to job opportunities worldwide. Passionate about building
-          polished, intuitive, and thoughtful digital experiences that leave a
-          mark.
+          Open to job opportunities worldwide. Building polished, intuitive
+          digital experiences with a cinematic touch.
         </motion.p>
 
-        {/* Button */}
+        {/* Action Button: Glowing & Heavy */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.2, duration: 0.7 }}  
-          className="lg:mt-3 lg:mb-5 md:mt-5 max-sm:mt-8"
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="mt-10"
         >
-          <a href="mailto:yourmail@example.com" target="_blank" rel="noopener noreferrer">
-            <Button variant="bgBlack" size="large" className="flex items-center gap-2">
-              <span className="uppercase">Contact</span>
-              <span></span>
-              <MdArrowOutward size={24} className="max-sm:hidden lg:block"/>
+          <a href="mailto:contact@vidusha.me" className="group">
+            <Button className="relative flex items-center gap-4 bg-white text-black hover:bg-orange-600 hover:text-white transition-all duration-500 py-6 px-10 rounded-none overflow-hidden">
+              <span className="uppercase font-black italic tracking-widest text-lg">
+                Inquire Now
+              </span>
+              <MdArrowOutward
+                size={24}
+                className="group-hover:rotate-45 transition-transform duration-300"
+              />
+
+              {/* Subtle Scanline Effect on Button */}
+              <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(255,255,255,0.1)_50%,transparent_50%)] bg-[length:100%_4px]" />
             </Button>
           </a>
         </motion.div>
       </div>
+
+      {/* Decorative Corner Element */}
+      <div className="absolute top-10 right-10 flex flex-col items-end opacity-20 max-md:hidden">
+        <span className="text-white font-mono text-xs">LAT: 6.7112° N</span>
+        <span className="text-white font-mono text-xs">LON: 79.9044° E</span>
+      </div>
+
+      <style jsx>{`
+        .stroke-text {
+          -webkit-text-stroke: 2px white;
+        }
+      `}</style>
     </section>
   );
 };
