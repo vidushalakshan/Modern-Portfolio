@@ -23,6 +23,10 @@ export default function page() {
       <div className="relative z-20 bg-[#0a0a0a]">
           <Work />
       </div>
+
+      <div className="relative z-20 bg-[#0a0a0a]">
+          <About />
+      </div>
     </main>
   );
 }
