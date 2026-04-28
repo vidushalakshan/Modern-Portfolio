@@ -112,7 +112,7 @@ const Service = () => {
       </div>
 
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-        <div className="relative w-full  px-12 z-10 h-full flex items-center">
+        <div className="relative w-full max-sm:px-3  px-12 z-10 h-full flex items-center">
           
           {sectionData.map((section) => {
             const opacity = useTransform(
@@ -152,7 +152,7 @@ const Service = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-10 pointer-events-auto">
                   
                   {/* Left: Description */}
-                  <div className="lg:col-span-5 border-l border-orange-600/50 pl-8">
+                  <div className="lg:col-span-5 border-l border-orange-600/50 pl-8 max-sm:pl-4">
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 italic leading-tight">
                       {section.subtitle}
                     </h3>
@@ -194,11 +194,11 @@ const Service = () => {
         </div>
 
         {/* 2. Bottom Right: Global Progress */}
-        <div className="absolute right-12 bottom-10 flex items-baseline gap-3">
+        <div className="absolute right-12 max-sm:right-3 bottom-10 flex items-baseline gap-3">
           <GlobalCounter progress={smoothProgress} />
           <div className="flex flex-col">
-             <span className="text-orange-600 font-mono text-[10px] leading-none uppercase tracking-tighter">Load_Engine</span>
-             <span className="text-gray-600 font-mono text-[9px] leading-none uppercase mt-1">v2.0.26</span>
+             <span className="text-orange-600 font-mono text-[10px] leading-none uppercase tracking-tighter max-sm:hidden">Load_Engine</span>
+             <span className="text-gray-600 font-mono text-[9px] leading-none uppercase mt-1 max-sm:hidden">v2.0.26</span>
           </div>
         </div>
 
