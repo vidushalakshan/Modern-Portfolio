@@ -50,7 +50,7 @@ const Page = () => {
           transition={{ duration: 0.8 }}
           className="text-orange-600 font-black tracking-[0.4em] uppercase text-sm mb-2"
         >
-          Full-Stack Software Engineer // 2026
+          Full-Stack Software Engineer - 2026
         </motion.span>
 
         {/* Heading */}
@@ -95,7 +95,7 @@ const Page = () => {
               </span>
               <MdArrowOutward
                 size={24}
-                className="text-orange-600 group-hover:text-white group-hover:rotate-45 transition-transform duration-300"
+                className="text-orange-600 ml-2 group-hover:text-white group-hover:rotate-45 transition-transform duration-300"
               />
             </Button>
           </a>
