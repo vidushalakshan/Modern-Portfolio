@@ -50,7 +50,7 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
               <MdTerminal className="text-[#FF5F00] animate-pulse" />
               <span className="text-[#FF5F00] font-mono text-[10px] tracking-[0.8em] uppercase">
-                // Termination_Sequence_Initiated
+                Termination_Sequence_Initiated
               </span>
             </div>
             
@@ -114,7 +114,7 @@ const Footer = () => {
                    <span>LAT: 6.7112° N / LON: 79.9044° E</span>
                  </div>
                  <div className="text-[9px] text-[#FF5F00]/40 tracking-[0.2em]">
-                   // Region: Western_Province_SL
+                    Region: Western_Province_SL
                  </div>
               </div>
             </div>

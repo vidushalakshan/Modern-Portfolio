@@ -167,7 +167,7 @@ const Projects = () => {
       <div className="relative z-10 max-w-[1600px] mx-auto">
         <div className="mb-20">
           <span className="text-[#FF5F00] font-mono text-[10px] tracking-[0.8em] uppercase block mb-4 animate-pulse">
-            // Accessing_Archive_v2.6
+            Accessing_Archive_v2.6
           </span>
           <h2 className="text-7xl md:text-9xl font-black text-white italic uppercase tracking-tighter leading-none">
             MISSION <br />{" "}
