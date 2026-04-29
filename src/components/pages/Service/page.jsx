@@ -19,7 +19,7 @@ const ServiceIndicator = ({ progress, range }) => {
   return (
     <motion.div
       style={{ opacity, scaleX }}
-      className="w-12 h-1 bg-orange-600 rounded-full origin-left"
+      className="w-12 h-1 bg-orange-600 rounded-full "
     />
   );
 };
