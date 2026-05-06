@@ -97,7 +97,7 @@ const Service = () => {
   ];
 
   return (
-    <section ref={containerRef} className="relative h-[250vh] bg-[#050505]">
+    <section ref={containerRef} className="relative h-[250vh] bg-[#050505] " id="services">
       {/* Background Decor - Parallax Watermark */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 

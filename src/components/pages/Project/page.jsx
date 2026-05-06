@@ -50,7 +50,7 @@ const ProjectCard = ({ project, index }) => {
       className="group relative bg-[#0f0f0f] border border-white/10 p-8 rounded-none cursor-crosshair overflow-hidden"
     >
       {/* GLITCH OVERLAY: Visible on hover */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" id="project">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,95,0,0.05),rgba(0,255,0,0.02),rgba(0,0,255,0.05))] bg-[length:100%_2px,3px_100%] animate-pulse" />
       </div>
 

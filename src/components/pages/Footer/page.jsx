@@ -25,7 +25,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative w-full bg-[#050505] pt-32 pb-10 px-6 sm:px-12 border-t border-white/5 overflow-hidden font-sans">
+    <footer className="relative w-full bg-[#050505] pt-32 pb-10 px-6 sm:px-12 border-t border-white/5 overflow-hidden font-sans" id="contact">
       
       {/* CYBER BACKGROUND ELEMENTS */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#FF5F00]/50 to-transparent animate-pulse" />

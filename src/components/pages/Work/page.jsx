@@ -3,189 +3,151 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const Experience = () => {
-  const targetRef = useRef(null);
+const SingleExperience = () => {
+  const containerRef = useRef(null);
 
-  // Horizontal scroll logic
   const { scrollYProgress } = useScroll({
-    target: targetRef,
+    target: containerRef,
+    offset: ["start end", "end start"],
   });
 
-  // This moves the wrapper horizontally based on vertical scroll
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
+  // Parallax offsets for different layers
+  const textY = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  const cardY = useTransform(scrollYProgress, [0, 1], ["10%", "-10%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [0.8, 1]);
 
-  const experiences = [
-    {
-      company: "XQUIRREL",
-      role: "CEO & Co-Founder",
-      period: "2025 - PRESENT",
-      color: "#ffffff",
-      status: "ACTIVE_STARTUP",
-      url: "https://www.xquirrel.com/en",
-      points: [
-        "Architecting the technical vision and business strategy for a modern software firm.",
-        "Directing the development of high-fidelity digital platforms and scalable web solutions.",
-        "Managing cross-functional teams to deliver enterprise-grade performance and UI/UX.",
-      ],
-    },
-    {
-      company: "LIYANAGE GROUP",
-      role: "Associate Software Engineer",
-      period: "2025 MAR - PRESENT",
-      color: "#00ff41",
-      status: "PROMOTED",
-      points: [
-        "Advancing enterprise system capabilities post-internship in a full-stack capacity.",
-        "Developing mission-critical features using Spring Boot and the React ecosystem.",
-        "Ensuring 99.9% system reliability through optimized database schemas and code reviews.",
-      ],
-    },
-    {
-      company: "TACT COMPUTER SYSTEMS",
-      role: "Software Engineer Intern",
-      period: "MAR 2024 - SEP 2024",
-      color: "#00d2ff",
-      status: "CERTIFIED",
-      points: [
-        "Engineered full-stack modules using React (Frontend) and Spring Boot (Backend).",
-        "Conducted rigorous API testing via Postman to ensure zero-bug deployment cycles.",
-        "Resolved complex system bugs, enhancing overall application reliability and functionality.",
-        "Successfully completed R&D tasks for new feature integration under Liyanage Group.",
-      ],
-    },
-    {
-      company: "SIMILATER",
-      role: "Frontend Developer Intern",
-      period: "OCT 2023 - FEB 2024",
-      color: "#94a3b8",
-      status: "COMPLETED",
-      points: [
-        "Developed responsive user interfaces using React, Tailwind CSS, and Bootstrap.",
-        "Maintained and optimized production websites for maximum speed and scalability.",
-        "Collaborated on translating UI/UX wireframes into functional, reusable components.",
-      ],
-    },
-  ];
+  const experience = {
+    company: "TACT COMPUTER SYSTEMS",
+    role: "Software Engineer Intern",
+    period: "MAR 2024 - SEP 2024",
+    color: "#00d2ff",
+    status: "CERTIFIED",
+    points: [
+      "Engineered full-stack modules using React (Frontend) and Spring Boot (Backend).",
+      "Conducted rigorous API testing via Postman to ensure zero-bug deployment cycles.",
+      "Resolved complex system bugs, enhancing overall application reliability and functionality.",
+      "Successfully completed R&D tasks for new feature integration under Liyanage Group.",
+    ],
+  };
 
   return (
-    <section ref={targetRef} className="relative h-[200vh] bg-[#050505]">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        
-        {/* Background Decorative Text */}
-        <div className="absolute top-10 left-10 overflow-hidden pointer-events-none">
-          <h2 className="text-white/[0.03] text-[15vw] font-black uppercase italic leading-none">
-            TIMELINE_
-          </h2>
+    <section 
+      ref={containerRef} 
+      className="relative min-h-[120vh] flex items-center justify-center bg-[#020202] py-20 overflow-hidden " id="works"
+    >
+      {/* Background Decorative Layer (Moves slowly) */}
+      <motion.div 
+        style={{ y: textY }}
+        className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none select-none"
+      >
+        <h2 className="text-[25vw] font-black text-white/[0.02] leading-none uppercase">
+          TACT_
+        </h2>
+        <h2 className="text-[20vw] font-black text-white/[0.01] leading-none uppercase italic ml-20">
+          SYSTEMS
+        </h2>
+      </motion.div>
+
+      {/* Floating Grid Decoration */}
+      <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]" />
+
+      {/* Main Content Card */}
+      <motion.div
+        style={{ y: cardY, opacity, scale }}
+        className="relative z-20 w-[90%] max-w-4xl"
+      >
+        {/* Top Accent Line */}
+        <div className="flex items-center gap-4 mb-4">
+          <div className="h-[1px] flex-grow bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          <span className="font-mono text-[10px] text-white/40 tracking-[0.4em] uppercase">
+            Internal_Report_v.01
+          </span>
+          <div className="h-[1px] flex-grow bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         </div>
 
-        {/* The Scanning Line */}
-        <div className="absolute left-1/4 top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-white/10 to-transparent z-10" />
+        <div className="relative bg-[#080808]/80 backdrop-blur-xl border border-white/10 p-8 md:p-16 overflow-hidden">
+          {/* Subtle Glow corner */}
+          <div 
+            className="absolute -top-24 -right-24 w-64 h-64 blur-[120px] opacity-20 transition-opacity duration-700"
+            style={{ backgroundColor: experience.color }}
+          />
 
-        {/* --- THE CORRECTED MAP LOOP STARTS HERE --- */}
-        <motion.div style={{ x }} className="flex gap-8 px-[10vw]">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className={`relative min-h-[600px] w-[450px] md:w-[550px] flex-shrink-0 bg-white/[0.02] border p-6 md:p-8 flex flex-col justify-between group rounded-sm transition-all duration-500 z-20 ${
-                exp.role.includes("CEO") ? "border-white/20" : "border-white/5"
-              }`}
-            >
-              {/* Glow Effect */}
-              <div
-                className="absolute -top-24 -right-24 w-48 h-48 blur-[100px] opacity-10 group-hover:opacity-30 transition-opacity duration-700"
-                style={{ backgroundColor: exp.color }}
-              />
+          {/* Header Row */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <p className="font-mono text-[10px] text-white/30 uppercase tracking-widest mb-2">Primary_Affiliation</p>
+              <h3 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase leading-none">
+                {experience.company}
+              </h3>
+            </div>
+            <div className="md:text-right">
+              <p className="font-mono text-xs text-white/70 mb-1">{experience.period}</p>
+              <span 
+                className="inline-block font-mono text-[10px] px-3 py-1 border rounded-full"
+                style={{ borderColor: `${experience.color}44`, color: experience.color }}
+              >
+                {experience.status}
+              </span>
+            </div>
+          </div>
 
-              <div className="flex-grow">
-                <div className="flex justify-between items-center mb-6">
-                  <div className="flex flex-col">
-                    <span className="text-[9px] font-mono text-gray-500 uppercase tracking-[0.2em]">
-                      Deployment_Period
-                    </span>
-                    <span className="font-mono text-xs text-white/80">
-                      {exp.period}
-                    </span>
-                  </div>
-                  <div className="text-right flex flex-col items-end">
-                    <span className="text-[9px] font-mono text-gray-500 uppercase tracking-[0.2em]">
-                      Status
-                    </span>
-                    <span
-                      className="font-mono text-[10px] px-2 py-0.5 bg-white/5 rounded border border-white/10"
-                      style={{ color: exp.color }}
-                    >
-                      {exp.status}
-                    </span>
-                  </div>
-                </div>
+          {/* Role Description */}
+          <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+            <div className="space-y-4">
+              <div className="h-[2px] w-12" style={{ backgroundColor: experience.color }} />
+              <h4 className="text-xl font-bold text-white uppercase italic tracking-wide">
+                {experience.role}
+              </h4>
+              <p className="text-sm text-white/40 leading-relaxed font-mono">
+                Full-stack focus utilizing enterprise-grade technologies to deliver scalable modules.
+              </p>
+            </div>
 
-                <h3 className="text-4xl md:text-5xl font-black text-white italic uppercase tracking-tighter leading-none mb-1">
-                  {exp.company}
-                </h3>
-                <p
-                  className="text-lg md:text-xl font-bold mb-6 italic tracking-tight"
-                  style={{ color: exp.color }}
+            <ul className="space-y-6">
+              {experience.points.map((point, i) => (
+                <motion.li 
+                  key={i}
+                  initial={{ x: 20, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group flex gap-4 text-gray-400 hover:text-white transition-colors duration-300"
                 >
-                  {exp.role}
-                </p>
+                  <span className="text-xs font-mono text-white/20 mt-1">0{i + 1}</span>
+                  <p className="text-sm md:text-base leading-relaxed tracking-tight">
+                    {point}
+                  </p>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
 
-                <ul className="space-y-3 pb-4">
-                  {exp.points.map((point, i) => (
-                    <li
-                      key={i}
-                      className="text-gray-400 text-xs md:text-sm flex gap-3 leading-relaxed group-hover:text-gray-200 transition-colors"
-                    >
-                      <span
-                        className="mt-1.5 h-1 w-1 rounded-full flex-shrink-0"
-                        style={{ backgroundColor: exp.color }}
-                      />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Footer section */}
-              <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
-                <div className="flex flex-col">
-                  <span className="text-[8px] font-mono text-gray-600 uppercase">
-                    Archive_Ref
-                  </span>
-                  <span className="text-[9px] font-mono text-white/40">
-                    00{index + 1} // SYS_REC
-                  </span>
+          {/* Footer Metadata */}
+          <div className="mt-16 pt-8 border-t border-white/5 flex flex-wrap gap-8 justify-between items-center">
+             <div className="flex gap-4 items-center">
+                <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 </div>
+                <div className="font-mono text-[9px] uppercase leading-tight text-white/30">
+                    Connection_Secure <br />
+                    Location: Colombo_HQ
+                </div>
+             </div>
+             
+             <div className="flex gap-1">
+                {[...Array(6)].map((_, i) => (
+                    <div key={i} className="w-1 h-4 bg-white/5 group-hover:bg-white/20 transition-all" />
+                ))}
+             </div>
+          </div>
+        </div>
 
-                {exp.url && (
-                  <a
-                    href={exp.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-white text-black text-[9px] font-black uppercase tracking-tighter hover:bg-orange-600 hover:text-white transition-all italic"
-                  >
-                    Launch_Project
-                  </a>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-        {/* --- THE CORRECTED MAP LOOP ENDS HERE --- */}
-
-      </div>
-
-      {/* Progress Indicator for the Timeline */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[20vw] h-[2px] bg-white/5 overflow-hidden">
-        <motion.div
-          style={{ scaleX: scrollYProgress }}
-          className="h-full bg-white origin-left opacity-50"
-        />
-      </div>
+        {/* Outer Corner Accents */}
+        <div className="absolute -top-2 -left-2 w-4 h-4 border-t-2 border-l-2 border-white/30" />
+        <div className="absolute -bottom-2 -right-2 w-4 h-4 border-b-2 border-r-2 border-white/30" />
+      </motion.div>
     </section>
   );
 };
 
-export default Experience;
+export default SingleExperience;

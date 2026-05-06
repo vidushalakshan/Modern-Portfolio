@@ -5,7 +5,7 @@ import { MdVerified, MdTerminal, MdPublic } from "react-icons/md";
 
 const About = () => {
   return (
-    <section className="relative m-h-screen w-full bg-[#0a0a0a] py-24 px-6 sm:px-12 overflow-hidden">
+    <section className="relative m-h-screen w-full bg-[#0a0a0a] py-24 px-6 sm:px-12 overflow-hidden" id="about">
       {/* Background HUD elements */}
       <div className="absolute top-20 left-10 opacity-10 pointer-events-none">
         <span className="text-white font-mono text-[15vw] leading-none uppercase select-none italic font-black">

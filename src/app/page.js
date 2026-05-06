@@ -22,9 +22,9 @@ export default function page() {
       </div>
       
       {/* Other sections follow normally */}
-      {/* <div className="relative z-20 bg-[#0a0a0a]">
+      <div className="relative z-20 bg-[#0a0a0a]">
           <Work />
-      </div> */}
+      </div>
 
       <div className="relative z-20 bg-[#0a0a0a]">
           <About />
